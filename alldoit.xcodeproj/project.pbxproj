@@ -15,6 +15,7 @@
 		4C0894962136199300F38850 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C0894942136199300F38850 /* LaunchScreen.storyboard */; };
 		4C0894A12136199300F38850 /* alldoitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0894A02136199300F38850 /* alldoitTests.swift */; };
 		4C0894AC2136199300F38850 /* alldoitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0894AB2136199300F38850 /* alldoitUITests.swift */; };
+		4C233B1621364F6C00ABC236 /* DatepicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C233B1521364F6C00ABC236 /* DatepicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4C0894A72136199300F38850 /* alldoitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alldoitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0894AB2136199300F38850 /* alldoitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alldoitUITests.swift; sourceTree = "<group>"; };
 		4C0894AD2136199300F38850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C233B1521364F6C00ABC236 /* DatepicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatepicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				4C0894882136199000F38850 /* AppDelegate.swift */,
 				4C08948A2136199000F38850 /* ViewController.swift */,
 				4C08948C2136199000F38850 /* Main.storyboard */,
+				4C233B1521364F6C00ABC236 /* DatepicView.swift */,
 				4C0894922136199300F38850 /* Assets.xcassets */,
 				4C0894942136199300F38850 /* LaunchScreen.storyboard */,
 				4C0894972136199300F38850 /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C08948B2136199000F38850 /* ViewController.swift in Sources */,
+				4C233B1621364F6C00ABC236 /* DatepicView.swift in Sources */,
 				4C0894912136199000F38850 /* alldoit.xcdatamodeld in Sources */,
 				4C0894892136199000F38850 /* AppDelegate.swift in Sources */,
 			);
