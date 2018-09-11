@@ -91,6 +91,9 @@
                                     <!--2018-07-09 13:48:38 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="AUU-s0-eoN" eventType="valueChanged" id="Y0J-lm-FYw"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재시간: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcS-W0-x1q">
                                 <rect key="frame" x="25" y="149" width="327" height="33"/>
@@ -111,7 +114,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
-                                    <segue destination="M4b-pJ-E0O" kind="unwind" unwindAction="backhomeWithSegue:" id="I5t-Kc-Axp"/>
+                                    <segue destination="M4b-pJ-E0O" kind="unwind" unwindAction="backhomeWithSegue:" id="qOr-Ln-7pt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="타이머 카운터 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hN5-4l-3Tb">
@@ -125,6 +128,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Icv-OF-EMt"/>
                     </view>
+                    <connections>
+                        <outlet property="lblCurrentTime" destination="KcS-W0-x1q" id="dIC-aG-QTo"/>
+                        <outlet property="lblPickTime" destination="eUk-t9-Zss" id="ojk-WQ-yVs"/>
+                        <outlet property="lblTimerCount" destination="hN5-4l-3Tb" id="CzU-Xw-NeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71g-8G-Orm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="M4b-pJ-E0O" userLabel="Exit" sceneMemberID="exit"/>
