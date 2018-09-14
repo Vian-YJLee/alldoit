@@ -13,6 +13,7 @@ class DatepicView: UIViewController {
     let timeSelector: Selector = #selector(DatepicView.updateTime)
     let interval = 1.0
     var count = 0
+    let current: Selector = #selector(DatepicView.currentTimer)
     
     @IBOutlet weak var lblCurrentTime: UILabel!
     @IBOutlet weak var lblPickTime: UILabel!
@@ -22,13 +23,13 @@ class DatepicView: UIViewController {
         super.viewDidLoad()
         
         Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
+        
+        Timer.scheduledTimer(timeInterval: interval, target: self, selector: current, userInfo: nil, repeats: true)
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -37,7 +38,7 @@ class DatepicView: UIViewController {
         let datePicview = sender
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss EEE"
-        lblTimerCount.text = "선택시간: " + formatter.string(from: datePicview.date)
+        lblPickTime.text = "선택시간: " + formatter.string(from: datePicview.date)
     }
     
     @objc func updateTime() {
@@ -57,15 +58,5 @@ class DatepicView: UIViewController {
         
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
