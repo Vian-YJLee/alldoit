@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let Next = segue.destination as! DatepicView
+        
     }
     
     @IBAction func backhome(segue: UIStoryboardSegue)
