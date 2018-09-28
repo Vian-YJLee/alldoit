@@ -75,6 +75,15 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vW-b2-QT3">
+                                <rect key="frame" x="268" y="505" width="59" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="alertT"/>
+                                <connections>
+                                    <segue destination="npY-HM-StD" kind="presentation" id="I1X-js-haT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -141,7 +150,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kbg-t7-wNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cDS-hL-J1A" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="1252.4630541871923"/>
+            <point key="canvasLocation" x="137" y="1071"/>
+        </scene>
+        <!--Alert Test-->
+        <scene sceneID="Jmt-Yz-heq">
+            <objects>
+                <viewController id="npY-HM-StD" customClass="alertTest" customModule="alldoit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MLi-n6-5as">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46X-2l-xSg">
+                                <rect key="frame" x="25" y="48" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="UB8-Au-4h0" kind="unwind" unwindAction="backhomeWithSegue:" id="Vyq-WO-F0z"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HgU-7t-Bc3">
+                                <rect key="frame" x="30" y="111" width="313" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS6-oQ-4Fl">
+                                <rect key="frame" x="302.54848191623842" y="693" width="30" height="35.999999999999773"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Del">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnLampRemove:" destination="npY-HM-StD" eventType="touchUpInside" id="o6D-gu-2Au"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfV-uq-vMF">
+                                <rect key="frame" x="171.54848191623842" y="693" width="37" height="35.999999999999773"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="OFF"/>
+                                <connections>
+                                    <action selector="btnLampOff:" destination="npY-HM-StD" eventType="touchUpInside" id="OKQ-Yz-raF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-Gq-j3G">
+                                <rect key="frame" x="41.548481916238416" y="693" width="30" height="35.999999999999773"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ON"/>
+                                <connections>
+                                    <action selector="btnLampOn:" destination="npY-HM-StD" eventType="touchUpInside" id="iAg-it-hUX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Uum-1o-CPX"/>
+                    </view>
+                    <connections>
+                        <outlet property="lampImg" destination="HgU-7t-Bc3" id="m1m-CM-Oik"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pTd-Py-g6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UB8-Au-4h0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1773.5999999999999" y="1070.6896551724139"/>
         </scene>
         <!--Datepic View-->
         <scene sceneID="wXh-eQ-Sl2">
@@ -204,7 +275,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71g-8G-Orm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="M4b-pJ-E0O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2559" y="383"/>
+            <point key="canvasLocation" x="1774" y="125"/>
         </scene>
     </scenes>
 </document>
