@@ -103,7 +103,6 @@
 		4C08947C2136199000F38850 = {
 			isa = PBXGroup;
 			children = (
-				4CF6232C214BAE5A002ABD98 /* PickerView.swift */,
 				4C0894872136199000F38850 /* alldoit */,
 				4C08949F2136199300F38850 /* alldoitTests */,
 				4C0894AA2136199300F38850 /* alldoitUITests */,
@@ -127,6 +126,7 @@
 				4CF6232E214BBCEE002ABD98 /* images */,
 				4C0894882136199000F38850 /* AppDelegate.swift */,
 				4C08948A2136199000F38850 /* ViewController.swift */,
+				4CF6232C214BAE5A002ABD98 /* PickerView.swift */,
 				4C08948C2136199000F38850 /* Main.storyboard */,
 				4C233B1521364F6C00ABC236 /* DatepicView.swift */,
 				4C0894922136199300F38850 /* Assets.xcassets */,
