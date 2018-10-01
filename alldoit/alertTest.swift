@@ -32,7 +32,7 @@ class alertTest: UIViewController {
         if(isLampOn==true) {
             
             let lampOnAlert = UIAlertController(title: "알림", message: "현재 램프가 켜져있는 상태입니다", preferredStyle: UIAlertControllerStyle.alert)
-            let OnAction = UIAlertAction(title: "네, 알겠습니다.", style: UIAlertActionStyle.default, handler: nil)
+            let OnAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: nil)
             
             lampOnAlert.addAction(OnAction)
             present(lampOnAlert, animated: true, completion: nil)
