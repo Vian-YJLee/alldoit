@@ -24,25 +24,43 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         lblLocationInfo2.text = ""
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //mapping accuracy set
         locationManager.requestWhenInUseAuthorization()
+        //GPS autorization
         locationManager.startUpdatingLocation()
         myMap.showsUserLocation = true
 
-        // Do any additional setup after loading the view.
+        //initialized Location
     }
     
-    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span :Double) {
+    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span :Double) -> CLLocationCoordinate2D {
         
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
         let spanValue = MKCoordinateSpanMake(span, span)
         let pRegion = MKCoordinateRegionMake(pLocation, spanValue)
         myMap.setRegion(pRegion, animated: true)
         
+        return pLocation
+        
+        // input Geoinfo(latitude, longitude) and showing on the mapView
+    }
+    
+    func setAnnotaion(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span :Double, title strTitle:String, subtile strSubtitle:String) {
+        
+        let annotaion = MKPointAnnotation()
+        annotaion.coordinate = goLocation(latitudeValue: latitudeValue, longitudeValue: longitudeValue, delta: span)
+        
+        annotaion.title = strTitle
+        annotaion.subtitle = strSubtitle
+        myMap.addAnnotation(annotaion)
+        
+        //marking Specific area
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let pLocation = locations.last
-        goLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longitudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
+        _ = goLocation(latitudeValue: (pLocation?.coordinate.latitude)!, longitudeValue: (pLocation?.coordinate.longitude)!, delta: 0.01)
         
         CLGeocoder().reverseGeocodeLocation(pLocation!, completionHandler: {
             (placemarks, error) -> Void in
@@ -64,9 +82,33 @@ class mapViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         
+        //현재 위치의 지역 정보 추출
+        
     }
     
     @IBAction func sgChangeLocation(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            self.lblLocationInfo1.text = ""
+            self.lblLocationInfo2.text = ""
+            locationManager.startUpdatingLocation()
+            
+            //현재 초기화된(혹은 초기값으로 지정된) 위치
+        }
+        else if sender.selectedSegmentIndex == 1 {
+            // 단팟 스튜디오
+            
+            setAnnotaion(latitudeValue: 37.5610194, longitudeValue: 126.9202167, delta: 0.01, title: "단팟 스튜디오", subtile: "서울시 동교로27길 77")
+            self.lblLocationInfo1.text = "Free set 1번"
+            self.lblLocationInfo2.text = "단팟스튜디오 연남점"
+        }
+        
+        else if sender.selectedSegmentIndex == 2 {
+            // 우리집
+            setAnnotaion(latitudeValue: 37.6207165, longitudeValue: 127.0582597, delta: 0.01, title: "Vian's Home", subtile: "서울시 노원구 거기어딘가 그쪽")
+            self.lblLocationInfo1.text = "Free set 2번"
+            self.lblLocationInfo2.text = "개발자네 집 인근 어딘가"
+        }
     }
     
 }
