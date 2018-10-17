@@ -80,8 +80,12 @@ class alertTest: UIViewController {
                 self.isLampOn = false
             })
             
+            let cancleAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.default, handler: nil)
+            
+            
             isLampRemoveAlert.addAction(putInandOn)
             isLampRemoveAlert.addAction(putInandoff)
+            isLampRemoveAlert.addAction(cancleAction)
             
             present(isLampRemoveAlert, animated: true, completion: nil)
         }

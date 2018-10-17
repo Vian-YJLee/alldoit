@@ -32,11 +32,22 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let editViewController = segue.destination as! EditViewController
+       
+        
+        if segue.identifier == "editButton" {
+             editViewController.textWayValue = "segue: Use button"
+            //button clicked
+        }
+        
+        else if segue.identifier == "editBarButton" {
+            editViewController.textWayValue = "segue: Use Bar Button"
+        }
+        //Bar button clicked
         
     }
     
-    @IBAction func backhome(segue: UIStoryboardSegue)
-    {
+    @IBAction func backhome(segue: UIStoryboardSegue) {
         
     }
 }
